@@ -1,0 +1,22 @@
+/* theme-overrides.scss */
+//修改el-color-primary等变量值
+:root {
+  --el-color-primary: #006BE6;
+  --el-color-success: #57D188;
+  --el-color-warning: #EFBD48;
+  --el-color-danger: #FF3860;
+  --el-color-info: #909399;
+}
+
+.gray{
+  filter: grayscale(100%);
+}
+.invert{
+  filter: invert(100%);
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}

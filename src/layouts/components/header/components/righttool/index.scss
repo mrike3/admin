@@ -1,0 +1,36 @@
+@use "/src/styles/my" as my;
+
+.search-item{
+  @include my.d-flex($jc: start);
+  padding: 0 10px;
+  font-size: 15px;
+  color: var(--el-text-color);
+  width: 100%;
+  height: 45px;
+  margin-top: 10px;
+  border: 1px solid var(--el-border-color);
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+.search-item:hover{
+  cursor: pointer;
+  font-size: 18px;
+  color: white;
+  background-color: var(--el-color-primary);
+}
+.Search-btn{
+  width: 100%;
+  height: 44px;
+  margin-top: 10px;
+  box-shadow: 0 -1px 0 0 var(--el-border-color), 0 -3px 6px 0 var(--el-border-color);
+  padding: 0 15px;
+}
+.btn-item{
+  margin: 0 6px;
+}
+.btn-icon{
+  margin: 0 2px;
+  padding: 3px;
+  border-radius: 10%;
+  box-shadow: inset 0 -2px 0 0 #cdcde6, inset 0 0 1px 1px #fff, 0 1px 2px 1px var(--el-border-color);
+}

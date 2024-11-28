@@ -1,0 +1,37 @@
+@use "/src/styles/my";
+
+::v-deep(.el-tabs__nav-wrap::after),
+::v-deep(.el-tabs__nav-scroll),
+::v-deep(.el-tabs__nav) {
+  background-color: var(--el-bg-color); /* 将 #你的颜色 替换成你想要的颜色 */
+}
+::v-deep(.el-tabs__nav-scroll){
+  //border-bottom: 1px solid var(--el-menu-border-color);
+}
+
+::v-deep(.el-tabs__content) {
+  background-color: var(--el-bg-color-page);
+  display: none;
+}
+
+.el-tabs {
+  border: none;
+}
+
+.el-tab-pane {
+  height: 100%;
+  overflow-y: auto;
+}
+
+.tab-pane{
+  height: 100%;overflow: auto;scrollbar-width: none;
+}
+
+::v-deep(.el-tabs__nav .el-tabs__item:nth-child(1) .is-icon-close){
+  display: none;
+}
+.moreBtn{
+  background-color: var(--el-bg-color);
+  @include my.d-flex();
+  border-left: 1px solid var(--el-border-color);
+}

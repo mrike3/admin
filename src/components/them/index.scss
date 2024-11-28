@@ -1,0 +1,14 @@
+@use "/src/styles/my" as my;
+
+.them-btn{
+  width: 25px;
+  position: absolute;
+  bottom: 20%;
+  right: 0;
+  z-index: 99;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+.aaa{
+  font-family: "钉钉进步体 Regular", sans-serif;
+}

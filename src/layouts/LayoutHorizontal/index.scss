@@ -1,0 +1,22 @@
+@use "/src/styles/my" as my;
+#layout-vertical{
+  @include my.w-h(100%, 100vh);
+}
+.header{
+  border-bottom: 1px solid var(--el-menu-border-color);
+  padding: 0;
+}
+.main{
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  background-color: var(--el-bg-color-page);
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+.footer{
+  //background-color: var(--el-bg-color-page);
+  font-size: 13px;
+  color: var(--el-text-color-disabled);
+  @include my.d-flex()
+}

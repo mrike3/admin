@@ -1,0 +1,114 @@
+{
+  "code": 200,
+  "data": [
+    {
+      "path": "/admin/home",
+      "name": "Home",
+      "component": "/home/index",
+      "breadcrumb": [
+        "aside.home"
+      ],
+      "meta": {
+        "icon": "House",
+        "title": "aside.home",
+        "isKeepAlive": false
+      }
+    },
+
+    {
+      "path": "/admin/abnormal/NotFound",
+      "meta": {
+        "icon": "icon-report",
+        "title": "aside.abnormal.title"
+      },
+      "children": [
+        {
+          "path": "/admin/abnormal/NotFound",
+          "name": "NotFound",
+          "component": "/abnormal/NotFound",
+          "breadcrumb": [
+            "aside.abnormal.title",
+            "aside.abnormal.list.page404"
+          ],
+          "meta": {
+            "icon": "icon-abnormal",
+            "title": "aside.abnormal.list.page404",
+            "isKeepAlive": false
+          }
+        },{
+          "path": "/admin/abnormal/NotPermission",
+          "name": "NotPermission",
+          "component": "/abnormal/NotPermission",
+          "breadcrumb": [
+            "aside.abnormal.title",
+            "aside.abnormal.list.page403"
+          ],
+          "meta": {
+            "icon": "icon-permissions",
+            "title": "aside.abnormal.list.page403",
+            "isKeepAlive": false
+          }
+        },{
+          "path": "/admin/abnormal/Wrong",
+          "name": "Wrong",
+          "component": "/abnormal/Wrong",
+          "breadcrumb": [
+            "aside.abnormal.title",
+            "aside.abnormal.list.page500"
+          ],
+          "meta": {
+            "icon": "icon-caution",
+            "title": "aside.abnormal.list.page500",
+            "isKeepAlive": true
+          }
+        }
+      ]
+    },
+    {
+      "path": "/admin/table/HouseRandom",
+      "meta": {
+        "icon": "icon-excel-one",
+        "title": "aside.table.title"
+      },
+      "children": [
+        {
+          "path": "/admin/table/HouseRandom",
+          "name": "HouseRandom",
+          "component": "/table/HouseRandom/index",
+          "breadcrumb": [
+            "aside.table.title",
+            "aside.table.list.HouseRandom"
+          ],
+          "meta": {
+            "icon": "icon-application",
+            "title": "aside.table.list.HouseRandom",
+            "isKeepAlive": true
+          }
+        }
+      ]
+    },
+    {
+      "path": "/admin/about/elementplus",
+      "meta": {
+        "icon": "icon-more-app",
+        "title": "aside.about.title"
+      },
+      "children": [
+        {
+          "path": "/admin/about/elementplus",
+          "name": "ElementPlus",
+          "component": "/about/elementplus/index",
+          "breadcrumb": [
+            "aside.about.title",
+            "aside.about.list.element"
+          ],
+          "meta": {
+            "icon": "ElementPlus",
+            "title": "aside.about.list.element",
+            "isKeepAlive": false
+          }
+        }
+      ]
+    }
+  ]
+}

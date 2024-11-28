@@ -1,0 +1,45 @@
+@use "/src/styles/my" as my;
+
+.theme-text{
+  color: var(--el-color-info);
+}
+
+.theme-col{
+  font-size: 12px;
+  @include my.d-flex();
+  height: auto;
+}
+
+.theme-item{
+  @include my.d-flex();
+  width: 100%;
+  border-radius: 10px;
+  height: 50px;
+  border: 1px solid #ccc;
+  color: var(--el-datepicker-icon-color);
+  transition: all 0.3s ease;
+}
+.theme-item:hover{
+  border: 2px solid var(--el-color-primary);
+}
+.theme-item-active{
+  border: 2px solid var(--el-color-primary);
+}
+
+// Dark mode switch
+.dark-col{
+  @include my.d-flex($jc:start);
+  color: var(--el-text-color);
+  font-size: 14px;
+}
+.dark-switch{
+  position: absolute;
+  right: 0;
+}
+
+.theme-row{
+  line-height: 2.5;
+  margin-top: 10px;
+  width: 100%;
+  @include my.d-flex($jc:space-around);
+}

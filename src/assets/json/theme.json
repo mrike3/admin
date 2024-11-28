@@ -1,0 +1,58 @@
+[
+  {
+    "title": "theme.appearance.builtin.list.default",
+    "color": "#006BE6"
+  },
+  {
+    "title": "theme.appearance.builtin.list.violet",
+    "color": "#7166F0"
+  },
+  {
+    "title": "theme.appearance.builtin.list.pink",
+    "color": "#E84A6C"
+  },
+  {
+    "title": "theme.appearance.builtin.list.yellow",
+    "color": "#EFBD48"
+  },
+  {
+    "title": "theme.appearance.builtin.list.skyblue",
+    "color": "#4E69FD"
+  },
+  {
+    "title": "theme.appearance.builtin.list.green",
+    "color": "#0BD092"
+  },
+  {
+    "title": "theme.appearance.builtin.list.zinc",
+    "color": "#3F3F46"
+  },
+  {
+    "title": "theme.appearance.builtin.list.deepgreen",
+    "color": "#0D9496"
+  },
+  {
+    "title": "theme.appearance.builtin.list.deepblue",
+    "color": "#0960BE"
+  },
+  {
+    "title": "theme.appearance.builtin.list.orange",
+    "color": "#C1420B"
+  },
+  {
+    "title": "theme.appearance.builtin.list.rose",
+    "color": "#BB1B1B"
+  },
+  {
+    "title": "theme.appearance.builtin.list.neutrals",
+    "color": "#404040"
+  },
+  {
+    "title": "theme.appearance.builtin.list.slate",
+    "color": "#344256"
+  },
+  {
+    "title": "theme.appearance.builtin.list.gray",
+    "color": "#384252"
+  }
+]

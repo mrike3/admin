@@ -1,0 +1,93 @@
+@use '/src/styles/my' as my;
+
+.general-row{
+  .general-col{
+    height: 40px;
+    @include my.d-flex($jc:start);
+    font-size: 14px;
+    color: var(--el-text-color);
+    .general-item{
+      position: absolute;
+      right: 0;
+      width: 50%;
+    }
+    .el-switch{
+      position: absolute;
+      right: 0;
+    }
+  }
+}
+
+.animation-row{
+  margin-top: 20px;
+  width: 100%;
+  .animation-col{
+    @include my.d-flex();
+    .animation-item{
+      transition: all 0.3s ease;
+      @include my.d-flex();
+      width: 64px;
+      height: 56px;
+      border: 1px solid var(--el-border-color);
+      border-radius: 4px;
+      .animation-box{
+        width: 80%;
+        height: 80%;
+        background-color: #f4f4f5;
+        border-radius: 4px;
+      }
+      &:hover{
+        border: 1px solid var(--el-color-primary);
+      }
+    }
+    .animation-active{
+      border: 1px solid var(--el-color-primary);
+    }
+  }
+}
+
+
+.fade1-enter-active,
+.fade1-leave-active,
+.fade2-enter-active,
+.fade2-leave-active,
+.fade3-enter-active,
+.fade3-leave-active,
+.fade4-enter-active,
+.fade4-leave-active
+{
+  transition: all 0.8s ease;
+}
+
+.fade1-enter-from,
+.fade1-leave-to {
+  opacity: 0;
+}
+
+.fade2-enter-from{
+  transform: translateX(-90%);
+  opacity: 0;
+}
+.fade2-leave-to {
+  transform: translateX(90%);
+  opacity: 0;
+}
+
+.fade3-enter-from{
+  transform: translateY(-20%);
+  opacity: 0;
+}
+.fade3-leave-to {
+  transform: translateY(20%);
+  opacity: 0;
+}
+
+.fade4-enter-from{
+  transform: translateY(20%);
+  opacity: 0;
+}
+.fade4-leave-to {
+  transform: translateY(-20%);
+  opacity: 0;
+}
+

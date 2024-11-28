@@ -1,0 +1,93 @@
+@use "/src/styles/my" as my;
+
+.el-button{
+  border: none ;
+}
+.icon1{
+  color:var(--el-button-text-color);
+  font-size: 17px;
+}
+
+.header-container{
+  @include my.w-h();
+  .header-left{
+    @include my.d-flex($jc:start);
+  }
+  .header-center{
+    @include my.d-flex($jc:start);
+    .header-menu{
+      background-color: transparent;
+      ::v-deep(.el-menu-item){
+        color: white;
+        &:hover{
+          color: var(--el-color-primary);
+        }
+      }
+      ::v-deep(.el-sub-menu__title){
+        color: white;
+        &:hover{
+          color: var(--el-color-primary);
+        }
+      }
+    }
+  }
+  .header-right{
+    @include my.d-flex($jc:end);
+  }
+}
+
+.header-tools-container{
+  width: 100%;
+  padding: 10px;
+}
+.header-tools-container-dark{
+  ::v-deep(.el-button){
+    background-color: black;
+    border: none;
+    color: white;
+  }
+  background-color: black;
+  color: white;
+  width: 100%;
+  padding: 10px;
+}
+.header-tabs-container{
+  width: 100%;
+  border-top: 1px solid var(--el-menu-border-color);
+}
+
+.header-pMenu-container{
+  width: 100%;
+  height: 100%;
+  @include my.d-flex($jc:start);
+  .header-pMenu{
+    transition: all 0.3s ease;
+    height: 100%;
+    margin-left: 10px;
+    @include my.d-flex($jc:start);
+    padding: 0 8px;
+    border-radius: 4px;
+    ::v-deep(.el-text){
+      margin-left: 10px;
+    }
+    &:hover{
+      ::v-deep(.el-text){
+        color: white;
+      }
+      ::v-deep(.el-icon){
+        color: white;
+      }
+      cursor: pointer;
+      background-color: var(--el-color-primary);
+    }
+  }
+  .header-pMenu-active{
+    ::v-deep(.el-text){
+      color: white;
+    }
+    ::v-deep(.el-icon){
+      color: white;
+    }
+    background-color: var(--el-color-primary);
+  }
+}

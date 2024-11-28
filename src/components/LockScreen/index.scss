@@ -1,0 +1,24 @@
+@use "/src/styles/my" as my;
+
+.lock-container{
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+.lock-bg-video{
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.lock-content{
+  @include my.d-flex($direction:column);
+  color: white;
+  .lock-time{
+    color: white;
+    font-size: 120px;
+    font-weight: bold;
+    opacity: 0.8;
+  }
+}

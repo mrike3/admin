@@ -1,0 +1,33 @@
+@use "/src/styles/my" as my;
+
+.aside-container{
+  height: 100%;
+  width: auto;
+  border-right: 1px solid var(--el-border-color);
+  .aside-main{
+    padding: 0;
+    height: 100%;
+    width: auto;
+    .aside-menu{
+      background-color: transparent;
+      margin-top: 10px;
+      border: none;
+
+    }
+  }
+}
+.aside-container-dark{
+  background-color: black;
+  ::v-deep(.el-button){
+    background-color: transparent;
+    color: white;
+    border: none;
+  }
+  ::v-deep(.el-menu-item){
+    color: white;
+    &:hover{
+      background-color: white;
+      color: black;
+    }
+  }
+}
