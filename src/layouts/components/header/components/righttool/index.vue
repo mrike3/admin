@@ -129,12 +129,12 @@ function ClickSearchItem(menu){
   </el-dropdown>
 
   <el-dropdown style="margin-left: 10px; margin-right: 10px" trigger="click">
-    <el-avatar src="/admin/src/assets/avatar.jpg" shape="square" size="small" />
+    <el-avatar src="/src/assets/avatar.jpg" shape="square" size="small" />
     <template #dropdown>
       <el-dropdown-menu>
         <el-dropdown-item disabled>
           <el-row align="middle" justify="start" style="flex-wrap: nowrap;">
-            <el-avatar src="/admin/src/assets/avatar.jpg" shape="square"/>
+            <el-avatar src="/src/assets/avatar.jpg" shape="square"/>
             <el-row style="flex-direction: column; margin-left: 10px;" justify="space-around" align="top">
               <span>Mrike<el-tag>Pro</el-tag> </span>
               <span>3136675549@qq.com</span>

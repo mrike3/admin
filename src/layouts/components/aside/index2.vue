@@ -15,7 +15,7 @@ const TStore=themStore()
   <el-row class="aside2-container">
     <div class="one-menu" v-bind:class="TStore.sideBarIsDark?'one-menu-dark':''">
       <div class="menu-logo">
-        <el-image src="/admin/src/assets/icons/icon2.png" style="width: 38px;" />
+        <el-image src="/src/assets/icons/icon2.png" style="width: 38px;" />
       </div>
       <div class="menu-item" v-bind:class="AStore.menuParentIndex===index?'menu-item-active':''" v-for="(item,index) in menuList.data" :key="index" @click="AStore.toggleAside(index)">
         <el-icon>

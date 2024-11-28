@@ -37,7 +37,7 @@ const props = defineProps({
         </el-col>
         <el-col :span="4" :xs="12" class="header-left" style="justify-content: space-around" v-if="isMenu">
           <el-row justify="center" align="middle">
-            <el-image src="/admin/src/assets/icons/icon2.png" style="width: 38px;" />&nbsp;&nbsp;
+            <el-image src="/src/assets/icons/icon2.png" style="width: 38px;" />&nbsp;&nbsp;
             <font style="font-size: 20px;">VFIRE ADMIN</font>
           </el-row>
           <el-button circle @click="flushRouter()">

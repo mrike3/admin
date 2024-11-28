@@ -1,7 +1,7 @@
 <template>
   <el-row style="flex-direction: column;width: 100%; height: 100%;" justify="center" align="middle">
     <div style="width: 30%;">
-      <el-image src="/admin/src/assets/403.png" fit="cover" />
+      <el-image src="/src/assets/403.png" fit="cover" />
     </div>
     <el-row style="flex-direction: column" justify="center" align="middle">
       <h1>{{ $t('NotPermission.title') }}</h1>
