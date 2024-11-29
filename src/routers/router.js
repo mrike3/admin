@@ -22,7 +22,7 @@ function createMenuRoutes(menuArray) {
         }else{
             const route = {
                 path: item.path,
-                component: () => import(/* @vite-ignore */'/src/views' + item.component+'.vue'),
+                component: () => import(/* @vite-ignore */'../views' + item.component+'.vue'),
             }
             menuRoutes.push(route)
         }
