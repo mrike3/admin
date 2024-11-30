@@ -3,15 +3,15 @@ import rightTool from './components/righttool/index.vue'
 import leftTool from './components/lefttool/index.vue'
 import tabs from '../Tabs/index.vue'
 import Recursion from '../aside/components/recursion.vue'
-import menuList from '/src/assets/json/menuList.json'
+import menuList from '@/assets/json/menuList.json'
 
 import {defineProps} from 'vue'
 import {useRouter} from 'vue-router'
 
-import {themStore} from '/src/stores/theme.js'
-import {headerStore} from '/src/stores/header.js'
-import {mainStore} from '/src/stores/main.js'
-import {asideStore} from '/src/stores/aside.js'
+import {themStore} from '@/stores/theme.js'
+import {headerStore} from '@/stores/header.js'
+import {mainStore} from '@/stores/main.js'
+import {asideStore} from '@/stores/aside.js'
 const TStore = themStore()
 const HStore = headerStore()
 const MStore = mainStore()
@@ -37,7 +37,7 @@ const props = defineProps({
         </el-col>
         <el-col :span="4" :xs="12" class="header-left" style="justify-content: space-around" v-if="isMenu">
           <el-row justify="center" align="middle">
-            <el-image src="/src/assets/icons/icon2.png" style="width: 38px;" />&nbsp;&nbsp;
+            <el-image src="/admin/img/icons/icon2.png" style="width: 38px;" />&nbsp;&nbsp;
             <font style="font-size: 20px;">VFIRE ADMIN</font>
           </el-row>
           <el-button circle @click="flushRouter()">

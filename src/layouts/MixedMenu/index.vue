@@ -3,9 +3,9 @@ import Header from './components/header/index.vue'
 import Main from './components/main/index.vue'
 import Aside from './components/aside/index.vue'
 
-import {mainStore} from '/src/stores/main.js'
-import {themStore} from '/src/stores/theme.js'
-import {asideStore} from '/src/stores/aside.js'
+import {mainStore} from '@/stores/main.js'
+import {themStore} from '@/stores/theme.js'
+import {asideStore} from '@/stores/aside.js'
 const MStore = mainStore()
 const TStore = themStore()
 const AStore = asideStore()

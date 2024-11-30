@@ -1,13 +1,13 @@
 <script setup>
 import rightTool from './components/righttool/index.vue'
-import menuList from '/src/assets/json/menuList.json'
+import menuList from '@/assets/json/menuList.json'
 
 import {useRouter} from 'vue-router'
 
-import {themStore} from '/src/stores/theme.js'
-import {headerStore} from '/src/stores/header.js'
-import {mainStore} from '/src/stores/main.js'
-import {asideStore} from '/src/stores/aside.js'
+import {themStore} from '@/stores/theme.js'
+import {headerStore} from '@/stores/header.js'
+import {mainStore} from '@/stores/main.js'
+import {asideStore} from '@/stores/aside.js'
 const TStore = themStore()
 const HStore = headerStore()
 const MStore = mainStore()
@@ -26,7 +26,7 @@ function flushRouter() {
       <el-row v-bind:class="TStore.topBarIsDark?'header-tools-container-dark':'header-tools-container'" v-show="HStore.isShow">
         <el-col :span="4" :xs="12" class="header-left" style="justify-content: space-around" >
           <el-row justify="center" align="middle">
-            <el-image src="/src/assets/icons/icon2.png" style="width: 38px;" />&nbsp;&nbsp;
+            <el-image src="/admin/img/icons/icon2.png" style="width: 38px;" />&nbsp;&nbsp;
             <font style="font-size: 20px;">VFIRE ADMIN</font>
           </el-row>
           <el-button circle @click="flushRouter()">

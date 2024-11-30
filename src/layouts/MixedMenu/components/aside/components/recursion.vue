@@ -1,8 +1,8 @@
 <!--递归菜单-->
 <script setup>
 import {defineProps} from 'vue'
-import {mainStore} from '/src/stores/main.js'
-import {headerStore} from '/src/stores/header.js'
+import {mainStore} from '@/stores/main.js'
+import {headerStore} from '@/stores/header.js'
 
 const MStore = mainStore()
 const HStore = headerStore()
@@ -13,8 +13,8 @@ const props = defineProps({
 
 // 点击菜单操作
 function ClickMenuItem(menu){
-  if(menu.path=='/admin/home'){
-    MStore.activeTabName='/admin/home'
+  if(menu.path=='/home'){
+    MStore.activeTabName='/home'
     return
   }
   const tab={

@@ -1,9 +1,9 @@
 <script setup>
-import { mainStore } from '/src/stores/main.js'
-import { asideStore} from '/src/stores/aside.js'
-import {headerStore} from '/src/stores/header.js'
+import { mainStore } from '@/stores/main.js'
+import { asideStore} from '@/stores/aside.js'
+import {headerStore} from '@/stores/header.js'
 import {useRouter} from 'vue-router'
-import menuList from '/src/assets/json/menuList.json'
+import menuList from '@/assets/json/menuList.json'
 import MoreBtn from './components/MoreBtn/index.vue'
 
 const MStore = mainStore()
@@ -15,8 +15,8 @@ MStore.router = router
 
 let currentUrl=window.location.pathname
 // 判断当前url是否为首页
-if( currentUrl.indexOf('/admin/home')!==-1){
-  router.push("/admin/home")
+if( currentUrl.indexOf('/home')!==-1){
+  router.push("/home")
 }else {
   getTab(menuList.data)
 }

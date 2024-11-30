@@ -1,6 +1,6 @@
 <script setup>
-import {asideStore} from '/src/stores/aside.js'
-import {mainStore} from '/src/stores/main.js'
+import {asideStore} from '@/stores/aside.js'
+import {mainStore} from '@/stores/main.js'
 
 import {useRouter} from 'vue-router'
 

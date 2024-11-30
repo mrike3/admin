@@ -1,6 +1,6 @@
 <script setup>
-import {mainStore} from '/src/stores/main.js'
-import {themStore} from '/src/stores/theme.js'
+import {mainStore} from '@/stores/main.js'
+import {themStore} from '@/stores/theme.js'
 
 const MStore = mainStore()
 const TStore = themStore()

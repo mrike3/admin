@@ -1,7 +1,7 @@
 import {defineStore} from 'pinia'
-import i18n from '../locales/language.js'
+import i18n from '@/locales/language.js'
 
-import menuList from '/src/assets/json/menuList.json'
+import menuList from '@/assets/json/menuList.json'
 
 const searchData =[]
 function getSearchList(menuData){

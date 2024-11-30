@@ -1,10 +1,10 @@
 <script setup>
 import Recursion from './components/recursion.vue'
-import menuList from '/src/assets/json/menuList.json'
+import menuList from '@/assets/json/menuList.json'
 
-import {asideStore} from '/src/stores/aside.js'
-import {mainStore} from '/src/stores/main.js'
-import {themStore} from '/src/stores/theme.js'
+import {asideStore} from '@/stores/aside.js'
+import {mainStore} from '@/stores/main.js'
+import {themStore} from '@/stores/theme.js'
 
 const AStore = asideStore()
 const MStore = mainStore()

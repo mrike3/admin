@@ -2,11 +2,11 @@ import {defineStore} from 'pinia'
 
 export const mainStore=defineStore('mainStore',{
     state:()=>({
-        activeTabName:'/admin/home',
+        activeTabName:'/home',
         tabList:[
             {
                 icon:'House',
-                name:'/admin/home',
+                name:'/home',
                 label:'aside.home',
                 isKeepalive:false,
                 KeepName:'home',

@@ -2,7 +2,7 @@
   "code": 200,
   "data": [
     {
-      "path": "/admin/home",
+      "path": "/home",
       "name": "Home",
       "component": "/home/index",
       "breadcrumb": [
@@ -16,14 +16,14 @@
     },
 
     {
-      "path": "/admin/abnormal/NotFound",
+      "path": "/abnormal/NotFound",
       "meta": {
         "icon": "icon-report",
         "title": "aside.abnormal.title"
       },
       "children": [
         {
-          "path": "/admin/abnormal/NotFound",
+          "path": "/abnormal/NotFound",
           "name": "NotFound",
           "component": "/abnormal/NotFound",
           "breadcrumb": [
@@ -36,7 +36,7 @@
             "isKeepAlive": false
           }
         },{
-          "path": "/admin/abnormal/NotPermission",
+          "path": "/abnormal/NotPermission",
           "name": "NotPermission",
           "component": "/abnormal/NotPermission",
           "breadcrumb": [
@@ -49,7 +49,7 @@
             "isKeepAlive": false
           }
         },{
-          "path": "/admin/abnormal/Wrong",
+          "path": "/abnormal/Wrong",
           "name": "Wrong",
           "component": "/abnormal/Wrong",
           "breadcrumb": [
@@ -65,14 +65,14 @@
       ]
     },
     {
-      "path": "/admin/table/HouseRandom",
+      "path": "/table/HouseRandom",
       "meta": {
         "icon": "icon-excel-one",
         "title": "aside.table.title"
       },
       "children": [
         {
-          "path": "/admin/table/HouseRandom",
+          "path": "/table/HouseRandom",
           "name": "HouseRandom",
           "component": "/table/HouseRandom/index",
           "breadcrumb": [
@@ -88,14 +88,14 @@
       ]
     },
     {
-      "path": "/admin/about/elementplus",
+      "path": "/about/elementplus",
       "meta": {
         "icon": "icon-more-app",
         "title": "aside.about.title"
       },
       "children": [
         {
-          "path": "/admin/about/elementplus",
+          "path": "/about/elementplus",
           "name": "ElementPlus",
           "component": "/about/elementplus/index",
           "breadcrumb": [

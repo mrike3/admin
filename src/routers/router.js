@@ -1,15 +1,18 @@
 import {createRouter, createWebHistory} from 'vue-router'
-import admin from '../layouts/index.vue'
-import NotFound from "../components/NotFound.vue";
+import admin from '@/layouts/index.vue'
+import NotFound from "@/components/NotFound.vue";
+import BlankPage from '@/views/BlankPage.vue'
 
 import Nprogress from 'nprogress'
 
-import menuList from '/src/assets/json/menuList.json'
+import menuList from '@/assets/json/menuList.json'
+
+const modules = import.meta.glob('@/views/**/*.vue')
 
 const menuRoutes = [
     {
-        path: '/admin/blankpage',
-        component: () => import(/* @vite-ignore */'/src/views/BlankPage.vue'),
+        path: 'blankpage',
+        component: BlankPage,
     }
 ]
 
@@ -22,7 +25,7 @@ function createMenuRoutes(menuArray) {
         }else{
             const route = {
                 path: item.path,
-                component: () => import(/* @vite-ignore */'../views' + item.component+'.vue'),
+                component: modules['/src/views'+item.component+'.vue'],
             }
             menuRoutes.push(route)
         }
@@ -34,7 +37,7 @@ function createMenuRoutes(menuArray) {
 
 const routes = [
     {
-        path: '/admin',
+        path: '/',
         component: admin,
         children: menuRoutes
     },
@@ -46,7 +49,7 @@ const routes = [
 ]
 
 const router = createRouter({
-    history: createWebHistory(),
+    history: createWebHistory('admin'),
     routes
 })
 

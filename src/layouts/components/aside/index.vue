@@ -1,8 +1,8 @@
 <script setup>
-import {asideStore} from '/src/stores/aside.js'
-import {mainStore} from '/src/stores/main.js'
-import {themStore} from '/src/stores/theme.js'
-import menuList from '/src/assets/json/menuList.json'
+import {asideStore} from '@/stores/aside.js'
+import {mainStore} from '@/stores/main.js'
+import {themStore} from '@/stores/theme.js'
+import menuList from '@/assets/json/menuList.json'
 import Recursion from './components/recursion.vue'
 
 const AStore=asideStore()
@@ -15,7 +15,7 @@ const TStore=themStore()
   <el-container v-bind:class="TStore.sideBarIsDark?'aside-container-dark':'aside-container'">
     <el-header style="padding: 0">
       <el-row justify="center" align="middle" style="width: 100%;height: 100%;">
-        <el-image src="/src/assets/icons/icon2.png" style="width: 38px;" />&nbsp;&nbsp;
+        <el-image src="/admin/img/icons/icon2.png" style="width: 38px;" />&nbsp;&nbsp;
         <h1 v-if="!AStore.menuCollapsed">VFIRE ADMIN</h1>
       </el-row>
     </el-header>

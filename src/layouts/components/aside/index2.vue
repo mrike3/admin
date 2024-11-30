@@ -1,8 +1,8 @@
 <script setup>
-import {asideStore} from '/src/stores/aside.js'
-import {mainStore} from '/src/stores/main.js'
-import {themStore} from '/src/stores/theme.js'
-import menuList from '/src/assets/json/menuList.json'
+import {asideStore} from '@/stores/aside.js'
+import {mainStore} from '@/stores/main.js'
+import {themStore} from '@/stores/theme.js'
+import menuList from '@/assets/json/menuList.json'
 import Recursion from './components/recursion.vue'
 
 const AStore=asideStore()
@@ -15,7 +15,7 @@ const TStore=themStore()
   <el-row class="aside2-container">
     <div class="one-menu" v-bind:class="TStore.sideBarIsDark?'one-menu-dark':''">
       <div class="menu-logo">
-        <el-image src="/src/assets/icons/icon2.png" style="width: 38px;" />
+        <el-image src="/admin/img/icons/icon2.png" style="width: 38px;" />
       </div>
       <div class="menu-item" v-bind:class="AStore.menuParentIndex===index?'menu-item-active':''" v-for="(item,index) in menuList.data" :key="index" @click="AStore.toggleAside(index)">
         <el-icon>
@@ -53,7 +53,7 @@ const TStore=themStore()
 </template>
 
 <style scoped lang="scss">
-@use "/src/styles/my" as my;
+@use "@/styles/my" as my;
 @use "index";
 .aside2-container{
   @include my.d-flex($wrap: nowrap);

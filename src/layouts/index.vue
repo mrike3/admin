@@ -4,14 +4,14 @@ import fullContent from './FullContent/index.vue'
 import layoutTwoColumns from './TowColumns/index.vue'
 import layoutMixedMenu from './MixedMenu/index.vue'
 import layoutHorizontal from './LayoutHorizontal/index.vue'
-import lockScreen from '../components/LockScreen/index.vue'
+import lockScreen from '@/components/LockScreen/index.vue'
 
-import theme from '../components/them/index.vue'
+import theme from '@/components/them/index.vue'
 import Mousetrap from 'mousetrap'
 import { ref } from 'vue'
 
-import {themStore} from '/src/stores/theme.js'
-import {headerStore} from '/src/stores/header.js'
+import {themStore} from '@/stores/theme.js'
+import {headerStore} from '@/stores/header.js'
 const TStore = themStore()
 const HStore = headerStore()
 

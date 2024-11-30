@@ -1,5 +1,5 @@
 <script setup>
-import {mainStore} from '/src/stores/main.js'
+import {mainStore} from '@/stores/main.js'
 import {useRouter} from 'vue-router'
 
 const MStore = mainStore()
@@ -12,7 +12,7 @@ function refresh() {
     const currentPageKeepName = MStore.currentTab.KeepName
     MStore.KeepAliveNames=MStore.KeepAliveNames.filter(item => item!==currentPageKeepName)
   }
-  router.replace({path:'/admin/blankpage'})
+  router.replace({path:'/blankpage'})
 }
 //关闭当前标签
 function closeCurrent() {
@@ -26,7 +26,7 @@ function closeCurrent() {
 }
 //关闭其它标签
 function closeOthers() {
-  MStore.tabList=MStore.tabList.filter(item => item.name== '/admin/home'||item.name==MStore.activeTabName)
+  MStore.tabList=MStore.tabList.filter(item => item.name== '/home'||item.name==MStore.activeTabName)
   if(!MStore.currentTab.isKeepAlive){
     MStore.KeepAliveNames=[]
   }else{
@@ -35,10 +35,10 @@ function closeOthers() {
 }
 //关闭所有标签
 function closeAll(){
-  MStore.tabList=MStore.tabList.filter(item => item.name== '/admin/home')
+  MStore.tabList=MStore.tabList.filter(item => item.name== '/home')
   MStore.KeepAliveNames=[]
-  MStore.activeTabName='/admin/home'
-  MStore.router.push('/admin/home')
+  MStore.activeTabName='/home'
+  MStore.router.push('/home')
 }
 //关闭左侧标签
 function closeLeft() {
@@ -70,7 +70,7 @@ function closeRight() {
         </el-dropdown-item>
       </el-dropdown-menu>
       <el-dropdown-menu>
-        <el-dropdown-item icon="Remove" v-bind:disabled="MStore.activeTabName=='/admin/home'" @click="closeCurrent">
+        <el-dropdown-item icon="Remove" v-bind:disabled="MStore.activeTabName=='/home'" @click="closeCurrent">
           {{ $t('moreBtn.closeCurrent') }}
         </el-dropdown-item>
         <el-dropdown-item icon="DArrowLeft" @click="closeLeft">

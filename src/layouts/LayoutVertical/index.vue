@@ -3,10 +3,10 @@ import Header from '../components/header/index.vue'
 import Aside from '../components/aside/index.vue'
 import Main from '../components/main/index.vue'
 
-import {asideStore} from '/src/stores/aside.js'
-import {headerStore} from '/src/stores/header.js'
-import {mainStore} from '/src/stores/main.js'
-import {themStore} from '/src/stores/theme.js'
+import {asideStore} from '@/stores/aside.js'
+import {headerStore} from '@/stores/header.js'
+import {mainStore} from '@/stores/main.js'
+import {themStore} from '@/stores/theme.js'
 const AStore = asideStore()
 const HStore = headerStore()
 const MStore = mainStore()
