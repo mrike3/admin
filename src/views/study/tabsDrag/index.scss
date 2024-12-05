@@ -1,0 +1,9 @@
+@use "@/styles/my" as my;
+
+.tabs-container{
+  @include my.w-h();
+  background-color: var(--el-bg-color);
+}
+.tabs-box{
+  width: 100%;
+}

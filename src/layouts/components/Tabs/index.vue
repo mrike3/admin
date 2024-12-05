@@ -5,11 +5,25 @@ import {headerStore} from '@/stores/header.js'
 import {useRouter} from 'vue-router'
 import menuList from '@/assets/json/menuList.json'
 import MoreBtn from './components/MoreBtn/index.vue'
+import Sortable from 'sortablejs'
+import {onMounted} from 'vue'
 
 const MStore = mainStore()
 const AStore = asideStore()
 const HStore = headerStore()
 const router = useRouter()
+
+onMounted(() => {
+  const el = document.querySelector('.tabs-box .el-tabs__nav')
+  Sortable.create(el,{
+    filter:'.el-tabs__item:first-child',
+    animation: 150,
+    onEnd({newIndex, oldIndex}){
+      const currRow = MStore.tabList.splice(oldIndex, 1)[0];
+      MStore.tabList.splice(newIndex, 0, currRow);
+    }
+  })
+})
 
 MStore.router = router
 
@@ -26,7 +40,7 @@ function getTab(menuArray){
     if(item.children!==undefined){
       getTab(item.children)
     }else {
-      if(item.path===currentUrl && MStore.tabList.find((tab) => tab.name === item.path)===undefined){
+      if(currentUrl.indexOf(item.path)!==-1 && MStore.tabList.find((tab) => tab.name === item.path)===undefined){
         MStore.tabList.push({
           name: item.path,
           label: item.meta.title,
@@ -49,7 +63,7 @@ function getTab(menuArray){
 <template>
   <el-row style="width: 100%;height: 100%;">
     <el-col :span="22" :xs="16">
-      <el-tabs v-model="MStore.activeTabName" type="border-card" style="height: 100%;" closable @tab-remove="MStore.removeTab" @tab-click="MStore.toggleTab">
+      <el-tabs class="tabs-box" v-model="MStore.activeTabName" type="border-card" style="height: 100%;" closable @tab-remove="MStore.removeTab" @tab-click="MStore.toggleTab">
         <el-tab-pane v-for="(item) in MStore.tabList" :name="item.name" class="tab-pane" :key="item.name+item.flushIndex">
           <template #label>
             <el-icon>

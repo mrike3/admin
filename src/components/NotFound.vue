@@ -6,13 +6,14 @@
     <el-row style="flex-direction: column" justify="center" align="middle">
       <h1>{{ $t('NotFound.title') }}</h1>
       <p>{{ $t('NotFound.content') }}</p>
-      <el-button type="primary" size="large" icon="Back" @click="$router.push('/home')">{{ $t('NotFound.btn') }}</el-button>
+      <el-button type="primary" size="large" icon="Back" @click="MStore.activeTabName = '/home'; $router.push('/home')">{{ $t('NotFound.btn') }}</el-button>
     </el-row>
   </el-row>
 </template>
 
-<script>
-
+<script setup>
+import { mainStore } from '@/stores/main.js'
+const MStore = mainStore()
 </script>
 
 <style scoped>

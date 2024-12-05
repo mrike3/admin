@@ -88,6 +88,42 @@
       ]
     },
     {
+      "path": "/study/draggableStudy",
+      "meta": {
+        "icon": "icon-book-open",
+        "title": "aside.study.title"
+      },
+      "children": [
+        {
+          "path": "/study/draggableStudy",
+          "name": "draggableStudy",
+          "component": "/study/draggableStudy/index",
+          "breadcrumb": [
+            "aside.study.title",
+            "aside.study.list.draggableStudy"
+          ],
+          "meta": {
+            "icon": "icon-drag",
+            "title": "aside.study.list.draggableStudy",
+            "isKeepAlive": false
+          }
+        },{
+          "path": "/study/tabsDrag",
+          "name": "tabsDrag",
+          "component": "/study/tabsDrag/index",
+          "breadcrumb": [
+            "aside.study.title",
+            "aside.study.list.tabsDrag"
+          ],
+          "meta": {
+            "icon": "icon-browser",
+            "title": "aside.study.list.tabsDrag",
+            "isKeepAlive": false
+          }
+        }
+      ]
+    },
+    {
       "path": "/about/elementplus",
       "meta": {
         "icon": "icon-more-app",

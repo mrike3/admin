@@ -164,6 +164,13 @@ const MyZh = {
             list:{
                 element: 'Element Plus',
             }
+        },
+        study:{
+            title: '学习',
+            list:{
+                draggableStudy: '拖拽学习',
+                tabsDrag: '标签拖拽学习',
+            }
         }
     }
 }
@@ -332,6 +339,13 @@ const MyEn = {
                 element: 'Element Plus',
             }
         },
+        study:{
+            title: 'Study',
+            list:{
+                draggableStudy: 'Draggable Study',
+                tabsDrag: 'TabsDrag Study',
+            }
+        }
     }
 
 }

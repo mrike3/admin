@@ -35,6 +35,10 @@ function ClickSearchItem(menu){
   HStore.breadcrumb=menu.breadcrumb
   router.push(menu.path)
 }
+
+function dropdownClick(command){
+  window.open(command, '_blank')
+}
 </script>
 
 <template>
@@ -128,7 +132,7 @@ function ClickSearchItem(menu){
     </template>
   </el-dropdown>
 
-  <el-dropdown style="margin-left: 10px; margin-right: 10px" trigger="click">
+  <el-dropdown style="margin-left: 10px; margin-right: 10px" trigger="click" @command="dropdownClick">
     <el-avatar src="/admin/img/avatar.jpg" shape="square" size="small" />
     <template #dropdown>
       <el-dropdown-menu>
@@ -145,7 +149,7 @@ function ClickSearchItem(menu){
           <icon-book-open theme="outline" class="icon1"/>&nbsp;
           {{ $t('header.document') }}
         </el-dropdown-item>
-        <el-dropdown-item>
+        <el-dropdown-item command="https://github.com/mrike3/admin">
           <icon-github theme="outline" class="icon1"/>&nbsp;
           Github
         </el-dropdown-item>
