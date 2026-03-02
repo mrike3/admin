@@ -105,7 +105,7 @@
           "meta": {
             "icon": "icon-drag",
             "title": "aside.study.list.draggableStudy",
-            "isKeepAlive": false
+            "isKeepAlive": true
           }
         },{
           "path": "/study/tabsDrag",
@@ -118,7 +118,7 @@
           "meta": {
             "icon": "icon-browser",
             "title": "aside.study.list.tabsDrag",
-            "isKeepAlive": false
+            "isKeepAlive": true
           }
         }
       ]

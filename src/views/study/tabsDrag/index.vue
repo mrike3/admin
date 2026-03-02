@@ -10,12 +10,12 @@ const tabs = ref([
     {label: 'E', name: '李京'},
 ])
 onMounted(() => {
-  const el = document.querySelector('.tabs-box .el-tabs__nav')
+  const el = document.querySelector('.tabs1-box .el-tabs__nav')
   Sortable.create(el,{
     animation: 150,
     onEnd({newIndex, oldIndex}){
-      const currRow = tabs.value.splice(oldIndex, 1)[0];
-      tabs.value.splice(newIndex, 0, currRow);
+      const currRow = tabs.value.splice(oldIndex, 1)[0]; // 先删除旧的
+      tabs.value.splice(newIndex, 0, currRow); // 再插入新的
     }
   })
 })
@@ -24,7 +24,7 @@ onMounted(() => {
 
 <template>
   <el-row class="tabs-container" justify="center" align="top">
-    <el-tabs class="tabs-box" type="border-card">
+    <el-tabs class="tabs1-box" type="border-card">
       <el-tab-pane :label="tab.label" v-for="tab in tabs" :key="tab.label">
         <pre>
           {{ tabs }}

@@ -16,7 +16,7 @@ const TStore=themStore()
     <el-header style="padding: 0">
       <el-row justify="center" align="middle" style="width: 100%;height: 100%;">
         <el-image src="/admin/img/icons/icon2.png" style="width: 38px;" />&nbsp;&nbsp;
-        <h1 v-if="!AStore.menuCollapsed">VFIRE ADMIN</h1>
+        <h3 v-if="!AStore.menuCollapsed">VFIRE ADMIN</h3>
       </el-row>
     </el-header>
     <el-main style="padding: 0;" >
