@@ -2,6 +2,10 @@
 import { ref } from 'vue'
 import { VueDraggable } from 'vue-draggable-plus'
 
+defineOptions({
+  name: 'draggableStudy'
+})
+
 const list = ref([
   {
     "name": "田正荣",

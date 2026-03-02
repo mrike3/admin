@@ -2,6 +2,10 @@
 import {ref,onMounted} from 'vue'
 import Sortable from 'sortablejs'
 
+defineOptions({
+  name: 'tabsDrag'
+})
+
 const tabs = ref([
     {label: 'A', name: '田正荣'},
     {label: 'B', name: '邓彩林'},

@@ -1,9 +1,14 @@
 <script setup lang="ts">
-import { ref,onMounted,reactive } from 'vue'
+import { ref,onMounted } from 'vue'
 import axios from 'axios'
 import { ElMessage, ElMessageBox } from "element-plus";
 import * as XLSX from 'xlsx'
 import FileSaver from 'file-saver'
+
+// 为keep-alive缓存添加组件名称
+defineOptions({
+  name: 'HouseRandom'
+})
 
 const SearchWindow=ref(true) // 搜索弹窗
 const plAddHouseWindow=ref(false) // 搜索弹窗
@@ -113,7 +118,7 @@ function exportHousesExcel() {
 
 function getHouses() {
   // 获取房源总列表
-  axios.get('https://mock.presstime.cn/mock/67207927caf0b4e52f1229cc/example/mrike').then(res => {
+  axios.get('https://mock.mengxuegu.com/mock/69a4fd728c3de17d818e5d49/example/house').then(res => {
     houses.value = res.data.projects
     location.value=[]
     HouseTab.value=houses.value.slice(currentPage.value*10-10,currentPage.value*10)
