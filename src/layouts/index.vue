@@ -64,7 +64,6 @@ Mousetrap.bind('alt+q', function() {
 
 <style scoped>
 .fontall {
-  //font-family: "阿里妈妈刀隶体 Regular";
-  font-family: "钉钉进步体 Regular";
+  font-family: "钉钉进步体 Regular", "JetBrains Mono",sans-serif;
 }
 </style>

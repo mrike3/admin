@@ -18,12 +18,12 @@
   border: 1px solid #ccc;
   color: var(--el-datepicker-icon-color);
   transition: all 0.3s ease;
-}
-.theme-item:hover{
-  border: 2px solid var(--el-color-primary);
+  &:hover{
+    border: 1px solid var(--el-color-primary);
+  }
 }
 .theme-item-active{
-  border: 2px solid var(--el-color-primary);
+  border: 1px solid var(--el-color-primary);
 }
 
 // Dark mode switch

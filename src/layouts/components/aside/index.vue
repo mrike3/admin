@@ -14,9 +14,9 @@ const TStore=themStore()
 <template>
   <el-container v-bind:class="TStore.sideBarIsDark?'aside-container-dark':'aside-container'">
     <el-header style="padding: 0">
-      <el-row justify="center" align="middle" style="width: 100%;height: 100%;">
+      <el-row justify="center" align="middle" style="width: 100%;height: 100%;flex-wrap: nowrap">
         <el-image src="/admin/img/icons/icon2.png" style="width: 38px;" />&nbsp;&nbsp;
-        <h3 v-if="!AStore.menuCollapsed">VFIRE ADMIN</h3>
+        <h3 v-if="!AStore.menuCollapsed" style="white-space: nowrap">VFIRE ADMIN</h3>
       </el-row>
     </el-header>
     <el-main style="padding: 0;" >

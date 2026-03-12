@@ -24,7 +24,7 @@ export const headerStore=defineStore('headerStore',{
         searchValue:'',
         searchShow:false,
         isShow:true,
-        isZh:sessionStorage.getItem('language')!='zh'?false:true||false,
+        isZh:sessionStorage.getItem('language')!='zh'?false:true,
         isFullScreen:false,
         isDark:sessionStorage.getItem('isDark')=='true'?true:false || false,
         SearchData:searchData,
@@ -54,6 +54,7 @@ export const headerStore=defineStore('headerStore',{
         toggleLanguage(command){
             sessionStorage.setItem('language',command);
             this.isZh=command=='zh'?true:false;
+            this.language=command;
             i18n.global.locale= sessionStorage.getItem('language')
         },
         //切换主题

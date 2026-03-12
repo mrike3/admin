@@ -350,7 +350,7 @@ const MyEn = {
 
 }
 const i18n = createI18n({
-    locale: sessionStorage.getItem('language') || 'zh',
+    locale: sessionStorage.getItem('language') || 'en',
     messages: {
         en: MyEn,
         zh: MyZh

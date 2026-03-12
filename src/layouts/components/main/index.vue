@@ -6,14 +6,13 @@ const MStore = mainStore()
 const TStore = themStore()
 
 </script>
-
-<template>
-  <transition :name="TStore.openAnimate?TStore.animateType:''">
-    <router-view v-slot="{ Component }">
 <!--      使用keep-alive缓存组件中需要写-->
 <!--      defineOptions({-->
 <!--        name: '缓存组件名称'-->
 <!--      })-->
+<template>
+  <transition :name="TStore.openAnimate?TStore.animateType:''">
+    <router-view v-slot="{ Component }">
       <keep-alive :include="MStore.KeepAliveNames">
         <component :is="Component" />
       </keep-alive>

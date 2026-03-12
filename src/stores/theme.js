@@ -23,7 +23,7 @@ export const themStore=defineStore('themStore',{
         topBarIsDark:sessionStorage.getItem('topBarIsDark')=='dark'?true:false||false,
         sideBarIsDark:sessionStorage.getItem('sideBarIsDark')=='dark'?true:false||false,
         openWaterMark:sessionStorage.getItem('openWaterMark')=='true'?true:false||false,
-        openAnimate:sessionStorage.getItem('openAnimate')=='true'?true:false,
+        openAnimate:sessionStorage.getItem('openAnimate')=='false'?false:true,
         animateType:sessionStorage.getItem('animateType')||'fade1',
         altk:true,
         altl:true,

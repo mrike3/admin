@@ -28,7 +28,7 @@ const TStore=themStore()
       <el-container v-bind:class="TStore.sideBarIsDark?'aside-container-dark':'aside-container'">
         <el-header style="padding: 0"  v-if="!AStore.menuCollapsed">
           <el-row justify="center" align="middle" style="width: 100%;height: 100%;">
-            <h1>VFIRE ADMIN</h1>
+            <h3>VFIRE ADMIN</h3>
           </el-row>
         </el-header>
         <el-main style="padding: 0;" >
