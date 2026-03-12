@@ -18,7 +18,30 @@ onMounted(() => {
   Sortable.create(el,{
     filter:'.el-tabs__item:first-child',
     animation: 150,
+
+    // --- 新增核心逻辑开始 ---
+    onMove: function (evt) {
+      // evt.related: 拖拽结束时鼠标下方的那个元素
+      // evt.willInsertAfter: 布尔值，true表示插入到目标之后，false表示插入到目标之前
+
+      const items = Array.from(evt.to.children);
+      const targetIndex = items.indexOf(evt.related);
+
+      // 计算即将插入的新位置索引
+      // 如果 willInsertAfter 为 true，插在后面，索引+1
+      const newIndex = evt.willInsertAfter ? targetIndex + 1 : targetIndex;
+
+      // 如果试图插入到第0个位置（即最前面），直接返回 false 阻止此次交换
+      if (newIndex === 0) {
+        return false;
+      }
+      return true;
+    },
+    // --- 新增核心逻辑结束 ---
+
     onEnd({newIndex, oldIndex}){
+      if (newIndex === 0) return;
+
       const currRow = MStore.tabList.splice(oldIndex, 1)[0];
       MStore.tabList.splice(newIndex, 0, currRow);
     }
