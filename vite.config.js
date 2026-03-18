@@ -9,7 +9,7 @@ export default defineConfig({
       vue(),
       // vueDevTools(),
   ],
-  base: 'admin',
+  base: '/admin',
   server:{
     host: '0.0.0.0',
   },

@@ -5,7 +5,6 @@ import tabs from '../Tabs/index.vue'
 import Recursion from '../aside/components/recursion.vue'
 import menuList from '@/assets/json/menuList.json'
 
-import {defineProps} from 'vue'
 import {useRouter} from 'vue-router'
 
 import {themStore} from '@/stores/theme.js'

@@ -1,6 +1,5 @@
 <!--递归菜单-->
 <script setup>
-import {defineProps} from 'vue'
 import {mainStore} from '@/stores/main.js'
 import {headerStore} from '@/stores/header.js'
 
