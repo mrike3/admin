@@ -1,23 +1,17 @@
 <script setup>
-import { mainStore } from '/src/stores/main.js'
-import { useRouter } from 'vue-router'
+import { mainStore } from "/src/stores/main.js";
+import { useRouter } from "vue-router";
 
-const MStore = mainStore()
-const router = useRouter()
+const MStore = mainStore();
+const router = useRouter();
 
-if(MStore.currentTab.isKeepAlive){
-  MStore.KeepAliveNames.push(MStore.currentTab.KeepName)
+if (MStore.currentTab.isKeepAlive) {
+	MStore.KeepAliveNames.push(MStore.currentTab.KeepName);
 }
 
-router.replace({path: MStore.activeTabName})
-
-
+router.replace({ path: MStore.activeTabName });
 </script>
 
-<template>
+<template></template>
 
-</template>
-
-<style scoped lang="scss">
-
-</style>
+<style scoped lang="scss"></style>

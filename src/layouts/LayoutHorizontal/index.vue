@@ -1,25 +1,27 @@
 <script setup>
-import Header from '../components/header/index.vue'
-import Main from '../components/main/index.vue'
+import Header from "../components/header/index.vue";
+import Main from "../components/main/index.vue";
 
-import {mainStore} from '@/stores/main.js'
-import {themStore} from '@/stores/theme.js'
-const MStore = mainStore()
-const TStore = themStore()
+import { mainStore } from "@/stores/main.js";
+import { themStore } from "@/stores/theme.js";
+const MStore = mainStore();
+const TStore = themStore();
 </script>
 
 <template>
-  <el-container id="layout-vertical">
-    <el-container>
-      <el-header class="header" height="auto">
-        <Header :is-menu="true" :is-mx="false" />
-      </el-header>
-      <el-main class="main">
-        <Main />
-      </el-main>
-      <el-footer v-if="MStore.showFooter" height="auto" class="footer">Copyright © {{TStore.copyrightdate}}&nbsp;{{TStore.copyrightname}}</el-footer>
-    </el-container>
-  </el-container>
+	<el-container id="layout-vertical">
+		<el-container>
+			<el-header class="header" height="auto">
+				<Header :is-menu="true" :is-mx="false" />
+			</el-header>
+			<el-main class="main">
+				<Main />
+			</el-main>
+			<el-footer v-if="MStore.showFooter" height="auto" class="footer"
+				>Copyright © {{ TStore.copyrightdate }}&nbsp;{{ TStore.copyrightname }}</el-footer
+			>
+		</el-container>
+	</el-container>
 </template>
 
 <style scoped lang="scss">
@@ -27,11 +29,11 @@ const TStore = themStore()
 
 .slide-fade-enter-active,
 .slide-fade-leave-active {
-  transition: all 0.5s ease-out;
+	transition: all 0.5s ease-out;
 }
 
 .slide-fade-enter-from,
 .slide-fade-leave-to {
-  width: 0;
+	width: 0;
 }
 </style>

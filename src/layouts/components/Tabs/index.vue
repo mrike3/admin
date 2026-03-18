@@ -1,119 +1,152 @@
 <script setup>
-import { mainStore } from '@/stores/main.js'
-import { asideStore} from '@/stores/aside.js'
-import {headerStore} from '@/stores/header.js'
-import {useRouter} from 'vue-router'
-import menuList from '@/assets/json/menuList.json'
-import MoreBtn from './components/MoreBtn/index.vue'
-import Sortable from 'sortablejs'
-import {onMounted} from 'vue'
+import { mainStore } from "@/stores/main.js";
+import { asideStore } from "@/stores/aside.js";
+import { headerStore } from "@/stores/header.js";
+import { useRouter } from "vue-router";
+import menuList from "@/assets/json/menuList.json";
+import MoreBtn from "./components/MoreBtn/index.vue";
+import Sortable from "sortablejs";
+import { onMounted } from "vue";
 
-const MStore = mainStore()
-const AStore = asideStore()
-const HStore = headerStore()
-const router = useRouter()
+const MStore = mainStore();
+const AStore = asideStore();
+const HStore = headerStore();
+const router = useRouter();
 
 onMounted(() => {
-  const el = document.querySelector('.tabs-box .el-tabs__nav')
-  Sortable.create(el,{
-    filter:'.el-tabs__item:first-child',
-    animation: 150,
+	const el = document.querySelector(".tabs-box .el-tabs__nav");
+	Sortable.create(el, {
+		filter: ".el-tabs__item:first-child",
+		animation: 150,
 
-    // --- 新增核心逻辑开始 ---
-    onMove: function (evt) {
-      // evt.related: 拖拽结束时鼠标下方的那个元素
-      // evt.willInsertAfter: 布尔值，true表示插入到目标之后，false表示插入到目标之前
+		// --- 新增核心逻辑开始 ---
+		onMove: function (evt) {
+			// evt.related: 拖拽结束时鼠标下方的那个元素
+			// evt.willInsertAfter: 布尔值，true表示插入到目标之后，false表示插入到目标之前
 
-      const items = Array.from(evt.to.children);
-      const targetIndex = items.indexOf(evt.related);
+			const items = Array.from(evt.to.children);
+			const targetIndex = items.indexOf(evt.related);
 
-      // 计算即将插入的新位置索引
-      // 如果 willInsertAfter 为 true，插在后面，索引+1
-      const newIndex = evt.willInsertAfter ? targetIndex + 1 : targetIndex;
+			// 计算即将插入的新位置索引
+			// 如果 willInsertAfter 为 true，插在后面，索引+1
+			const newIndex = evt.willInsertAfter ? targetIndex + 1 : targetIndex;
 
-      // 如果试图插入到第0个位置（即最前面），直接返回 false 阻止此次交换
-      if (newIndex === 0) {
-        return false;
-      }
-      return true;
-    },
-    // --- 新增核心逻辑结束 ---
+			// 如果试图插入到第0个位置（即最前面），直接返回 false 阻止此次交换
+			if (newIndex === 0) {
+				return false;
+			}
+			return true;
+		},
+		// --- 新增核心逻辑结束 ---
 
-    onEnd({newIndex, oldIndex}){
-      if (newIndex === 0) return;
+		onEnd({ newIndex, oldIndex }) {
+			if (newIndex === 0) return;
 
-      const currRow = MStore.tabList.splice(oldIndex, 1)[0];
-      MStore.tabList.splice(newIndex, 0, currRow);
-    }
-  })
-})
+			const currRow = MStore.tabList.splice(oldIndex, 1)[0];
+			MStore.tabList.splice(newIndex, 0, currRow);
+		},
+	});
+});
 
-MStore.router = router
+MStore.router = router;
 
-let currentUrl=window.location.pathname
+let currentUrl = window.location.pathname;
 // 判断当前url是否为首页
-if( currentUrl.indexOf('/home')!==-1){
-  router.push("/home")
-}else {
-  getTab(menuList.data)
+if (currentUrl.indexOf("/home") !== -1) {
+	router.push("/home");
+} else {
+	getTab(menuList.data);
 }
 
-function getTab(menuArray){
-  menuArray.forEach(item => {
-    if(item.children!==undefined){
-      getTab(item.children)
-    }else {
-      if(currentUrl.indexOf(item.path)!==-1 && MStore.tabList.find((tab) => tab.name === item.path)===undefined){
-        MStore.tabList.push({
-          name: item.path,
-          label: item.meta.title,
-          icon: item.meta.icon,
-          isKeepAlive: item.meta.isKeepAlive,
-          KeepName:item.name,
-          breadcrumb:item.breadcrumb
-        })
-        if(item.isKeepAlive){
-          MStore.KeepAliveNames.push(item.name)
-        }
-        MStore.activeTabName = item.path
-      }
-    }
-  })
+function getTab(menuArray) {
+	menuArray.forEach((item) => {
+		if (item.children !== undefined) {
+			getTab(item.children);
+		} else {
+			if (
+				currentUrl.indexOf(item.path) !== -1 &&
+				MStore.tabList.find((tab) => tab.name === item.path) === undefined
+			) {
+				MStore.tabList.push({
+					name: item.path,
+					label: item.meta.title,
+					icon: item.meta.icon,
+					isKeepAlive: item.meta.isKeepAlive,
+					KeepName: item.name,
+					breadcrumb: item.breadcrumb,
+				});
+				if (item.isKeepAlive) {
+					MStore.KeepAliveNames.push(item.name);
+				}
+				MStore.activeTabName = item.path;
+			}
+		}
+	});
 }
-
 </script>
 
 <template>
-  <el-row style="width: 100%;height: 100%;">
-    <el-col :span="22" :xs="16">
-      <el-tabs class="tabs-box" v-model="MStore.activeTabName" type="border-card" style="height: 100%;" closable @tab-remove="MStore.removeTab" @tab-click="MStore.toggleTab">
-        <el-tab-pane v-for="(item) in MStore.tabList" :name="item.name" class="tab-pane" :key="item.name+item.flushIndex">
-          <template #label>
-            <el-icon>
-              <component :is="item.icon" />
-            </el-icon>
-            {{ $t(item.label) }}
-          </template>
-        </el-tab-pane>
-      </el-tabs>
-    </el-col>
-    <el-col :span="1" :xs="4" class="moreBtn">
-      <MoreBtn />
-    </el-col>
-    <el-col :span="1" :xs="4" class="moreBtn">
-      <el-button type="text" @click="()=>{AStore.showAside=false;HStore.isShow=false;}" v-if="HStore.isShow">
-        <el-icon>
-          <FullScreen />
-        </el-icon>
-      </el-button>
+	<el-row style="width: 100%; height: 100%">
+		<el-col :span="22" :xs="16">
+			<el-tabs
+				class="tabs-box"
+				v-model="MStore.activeTabName"
+				type="border-card"
+				style="height: 100%"
+				closable
+				@tab-remove="MStore.removeTab"
+				@tab-click="MStore.toggleTab"
+			>
+				<el-tab-pane
+					v-for="item in MStore.tabList"
+					:name="item.name"
+					class="tab-pane"
+					:key="item.name + item.flushIndex"
+				>
+					<template #label>
+						<el-icon>
+							<component :is="item.icon" />
+						</el-icon>
+						{{ $t(item.label) }}
+					</template>
+				</el-tab-pane>
+			</el-tabs>
+		</el-col>
+		<el-col :span="1" :xs="4" class="moreBtn">
+			<MoreBtn />
+		</el-col>
+		<el-col :span="1" :xs="4" class="moreBtn">
+			<el-button
+				type="text"
+				@click="
+					() => {
+						AStore.showAside = false;
+						HStore.isShow = false;
+					}
+				"
+				v-if="HStore.isShow"
+			>
+				<el-icon>
+					<FullScreen />
+				</el-icon>
+			</el-button>
 
-      <el-button type="text" @click="()=>{AStore.showAside=true;HStore.isShow=true;}" v-if="!HStore.isShow">
-        <el-icon>
-          <icon-off-screen theme="outline"/>
-        </el-icon>
-      </el-button>
-    </el-col>
-  </el-row>
+			<el-button
+				type="text"
+				@click="
+					() => {
+						AStore.showAside = true;
+						HStore.isShow = true;
+					}
+				"
+				v-if="!HStore.isShow"
+			>
+				<el-icon>
+					<icon-off-screen theme="outline" />
+				</el-icon>
+			</el-button>
+		</el-col>
+	</el-row>
 </template>
 
 <style scoped lang="scss">

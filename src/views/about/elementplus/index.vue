@@ -1,11 +1,7 @@
-<script setup>
-
-</script>
+<script setup></script>
 
 <template>
-  <iframe src="https://element-plus.org/zh-CN/" style="width: 100%; height: 100%; border: none;" />
+	<iframe src="https://element-plus.org/zh-CN/" style="width: 100%; height: 100%; border: none" />
 </template>
 
-<style scoped lang="scss">
-
-</style>
+<style scoped lang="scss"></style>
