@@ -9,9 +9,9 @@ const locale = computed(() => (HStore.isZh ? zhCn : en));
 </script>
 
 <template>
-	<el-config-provider :locale="locale">
-		<router-view />
-	</el-config-provider>
+    <el-config-provider :locale="locale">
+        <router-view />
+    </el-config-provider>
 </template>
 
 <style scoped></style>

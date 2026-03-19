@@ -1,129 +1,129 @@
 {
-	"code": 200,
-	"data": [
-		{
-			"path": "/home",
-			"name": "Home",
-			"component": "/home/index",
-			"breadcrumb": ["aside.home"],
-			"meta": {
-				"icon": "House",
-				"title": "aside.home",
-				"isKeepAlive": false
-			}
-		},
-		{
-			"path": "/abnormal/NotFound",
-			"meta": {
-				"icon": "icon-report",
-				"title": "aside.abnormal.title"
-			},
-			"children": [
-				{
-					"path": "/abnormal/NotFound",
-					"name": "NotFound",
-					"component": "/abnormal/NotFound",
-					"breadcrumb": ["aside.abnormal.title", "aside.abnormal.list.page404"],
-					"meta": {
-						"icon": "icon-abnormal",
-						"title": "aside.abnormal.list.page404",
-						"isKeepAlive": false
-					}
-				},
-				{
-					"path": "/abnormal/NotPermission",
-					"name": "NotPermission",
-					"component": "/abnormal/NotPermission",
-					"breadcrumb": ["aside.abnormal.title", "aside.abnormal.list.page403"],
-					"meta": {
-						"icon": "icon-permissions",
-						"title": "aside.abnormal.list.page403",
-						"isKeepAlive": false
-					}
-				},
-				{
-					"path": "/abnormal/Wrong",
-					"name": "Wrong",
-					"component": "/abnormal/Wrong",
-					"breadcrumb": ["aside.abnormal.title", "aside.abnormal.list.page500"],
-					"meta": {
-						"icon": "icon-caution",
-						"title": "aside.abnormal.list.page500",
-						"isKeepAlive": true
-					}
-				}
-			]
-		},
-		{
-			"path": "/table/HouseRandom",
-			"meta": {
-				"icon": "icon-excel-one",
-				"title": "aside.table.title"
-			},
-			"children": [
-				{
-					"path": "/table/HouseRandom",
-					"name": "HouseRandom",
-					"component": "/table/HouseRandom/index",
-					"breadcrumb": ["aside.table.title", "aside.table.list.HouseRandom"],
-					"meta": {
-						"icon": "icon-application",
-						"title": "aside.table.list.HouseRandom",
-						"isKeepAlive": true
-					}
-				}
-			]
-		},
-		{
-			"path": "/study/draggableStudy",
-			"meta": {
-				"icon": "icon-book-open",
-				"title": "aside.study.title"
-			},
-			"children": [
-				{
-					"path": "/study/draggableStudy",
-					"name": "draggableStudy",
-					"component": "/study/draggableStudy/index",
-					"breadcrumb": ["aside.study.title", "aside.study.list.draggableStudy"],
-					"meta": {
-						"icon": "icon-drag",
-						"title": "aside.study.list.draggableStudy",
-						"isKeepAlive": true
-					}
-				},
-				{
-					"path": "/study/tabsDrag",
-					"name": "tabsDrag",
-					"component": "/study/tabsDrag/index",
-					"breadcrumb": ["aside.study.title", "aside.study.list.tabsDrag"],
-					"meta": {
-						"icon": "icon-browser",
-						"title": "aside.study.list.tabsDrag",
-						"isKeepAlive": true
-					}
-				}
-			]
-		},
-		{
-			"path": "/about/elementplus",
-			"meta": {
-				"icon": "icon-more-app",
-				"title": "aside.about.title"
-			},
-			"children": [
-				{
-					"path": "/about/elementplus",
-					"name": "ElementPlus",
-					"component": "/about/elementplus/index",
-					"breadcrumb": ["aside.about.title", "aside.about.list.element"],
-					"meta": {
-						"icon": "ElementPlus",
-						"title": "aside.about.list.element",
-						"isKeepAlive": false
-					}
-				}
-			]
-		}
-	]
+    "code": 200,
+    "data": [
+        {
+            "path": "/home",
+            "name": "Home",
+            "component": "/home/index",
+            "breadcrumb": ["aside.home"],
+            "meta": {
+                "icon": "House",
+                "title": "aside.home",
+                "isKeepAlive": false
+            }
+        },
+        {
+            "path": "/abnormal/NotFound",
+            "meta": {
+                "icon": "icon-report",
+                "title": "aside.abnormal.title"
+            },
+            "children": [
+                {
+                    "path": "/abnormal/NotFound",
+                    "name": "NotFound",
+                    "component": "/abnormal/NotFound",
+                    "breadcrumb": ["aside.abnormal.title", "aside.abnormal.list.page404"],
+                    "meta": {
+                        "icon": "icon-abnormal",
+                        "title": "aside.abnormal.list.page404",
+                        "isKeepAlive": false
+                    }
+                },
+                {
+                    "path": "/abnormal/NotPermission",
+                    "name": "NotPermission",
+                    "component": "/abnormal/NotPermission",
+                    "breadcrumb": ["aside.abnormal.title", "aside.abnormal.list.page403"],
+                    "meta": {
+                        "icon": "icon-permissions",
+                        "title": "aside.abnormal.list.page403",
+                        "isKeepAlive": false
+                    }
+                },
+                {
+                    "path": "/abnormal/Wrong",
+                    "name": "Wrong",
+                    "component": "/abnormal/Wrong",
+                    "breadcrumb": ["aside.abnormal.title", "aside.abnormal.list.page500"],
+                    "meta": {
+                        "icon": "icon-caution",
+                        "title": "aside.abnormal.list.page500",
+                        "isKeepAlive": true
+                    }
+                }
+            ]
+        },
+        {
+            "path": "/table/HouseRandom",
+            "meta": {
+                "icon": "icon-excel-one",
+                "title": "aside.table.title"
+            },
+            "children": [
+                {
+                    "path": "/table/HouseRandom",
+                    "name": "HouseRandom",
+                    "component": "/table/HouseRandom/index",
+                    "breadcrumb": ["aside.table.title", "aside.table.list.HouseRandom"],
+                    "meta": {
+                        "icon": "icon-application",
+                        "title": "aside.table.list.HouseRandom",
+                        "isKeepAlive": true
+                    }
+                }
+            ]
+        },
+        {
+            "path": "/study/draggableStudy",
+            "meta": {
+                "icon": "icon-book-open",
+                "title": "aside.study.title"
+            },
+            "children": [
+                {
+                    "path": "/study/draggableStudy",
+                    "name": "draggableStudy",
+                    "component": "/study/draggableStudy/index",
+                    "breadcrumb": ["aside.study.title", "aside.study.list.draggableStudy"],
+                    "meta": {
+                        "icon": "icon-drag",
+                        "title": "aside.study.list.draggableStudy",
+                        "isKeepAlive": true
+                    }
+                },
+                {
+                    "path": "/study/tabsDrag",
+                    "name": "tabsDrag",
+                    "component": "/study/tabsDrag/index",
+                    "breadcrumb": ["aside.study.title", "aside.study.list.tabsDrag"],
+                    "meta": {
+                        "icon": "icon-browser",
+                        "title": "aside.study.list.tabsDrag",
+                        "isKeepAlive": true
+                    }
+                }
+            ]
+        },
+        {
+            "path": "/about/elementplus",
+            "meta": {
+                "icon": "icon-more-app",
+                "title": "aside.about.title"
+            },
+            "children": [
+                {
+                    "path": "/about/elementplus",
+                    "name": "ElementPlus",
+                    "component": "/about/elementplus/index",
+                    "breadcrumb": ["aside.about.title", "aside.about.list.element"],
+                    "meta": {
+                        "icon": "ElementPlus",
+                        "title": "aside.about.list.element",
+                        "isKeepAlive": false
+                    }
+                }
+            ]
+        }
+    ]
 }

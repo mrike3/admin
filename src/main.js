@@ -24,18 +24,18 @@ const app = createApp(App);
 
 // 全局错误处理
 app.config.errorHandler = (err) => {
-	ElNotification.error({
-		message: err,
-		title: i18n.global.t("error"),
-		position: "bottom-right",
-	});
+    ElNotification.error({
+        message: err,
+        title: i18n.global.t("error"),
+        position: "bottom-right",
+    });
 };
 
 install(app);
 app.use(ElementPlus);
 // 注册ElementPlus图标
 for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
-	app.component(key, component);
+    app.component(key, component);
 }
 // 注册pinia
 app.use(createPinia());

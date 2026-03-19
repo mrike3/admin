@@ -7,54 +7,54 @@
 .fade3-leave-active,
 .fade4-enter-active,
 .fade4-leave-active {
-	transition: all 0.5s ease;
+    transition: all 0.5s ease;
 }
 
 .fade1-enter-from,
 .fade1-leave-to {
-	opacity: 0;
+    opacity: 0;
 }
 
 .fade2-enter-from {
-	transform: translateX(-20%);
-	opacity: 0;
+    transform: translateX(-20%);
+    opacity: 0;
 }
 .fade2-leave-to {
-	transform: translateX(20%);
-	opacity: 0;
+    transform: translateX(20%);
+    opacity: 0;
 }
 
 .fade3-enter-from {
-	transform: translateY(-20%);
-	opacity: 0;
+    transform: translateY(-20%);
+    opacity: 0;
 }
 .fade3-leave-to {
-	transform: translateY(20%);
-	opacity: 0;
+    transform: translateY(20%);
+    opacity: 0;
 }
 
 .fade4-enter-from {
-	transform: translateY(20%);
-	opacity: 0;
+    transform: translateY(20%);
+    opacity: 0;
 }
 .fade4-leave-to {
-	transform: translateY(-20%);
-	opacity: 0;
+    transform: translateY(-20%);
+    opacity: 0;
 }
 
 .main-container {
-	@include my.w-h();
-	@include my.d-flex($direction: column, $jc: start);
+    @include my.w-h();
+    @include my.d-flex($direction: column, $jc: start);
 
-	.tab-container {
-		border-bottom: 1px solid var(--el-border-color);
-		@include my.d-flex();
-		@include my.w-h($width: 100%, $height: auto);
-	}
+    .tab-container {
+        border-bottom: 1px solid var(--el-border-color);
+        @include my.d-flex();
+        @include my.w-h($width: 100%, $height: auto);
+    }
 
-	.content-container {
-		@include my.d-flex();
-		width: 100%;
-		flex-grow: 1;
-	}
+    .content-container {
+        @include my.d-flex();
+        width: 100%;
+        flex-grow: 1;
+    }
 }

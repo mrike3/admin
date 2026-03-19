@@ -6,7 +6,7 @@ const MStore = mainStore();
 const router = useRouter();
 
 if (MStore.currentTab.isKeepAlive) {
-	MStore.KeepAliveNames.push(MStore.currentTab.KeepName);
+    MStore.KeepAliveNames.push(MStore.currentTab.KeepName);
 }
 
 router.replace({ path: MStore.activeTabName });
