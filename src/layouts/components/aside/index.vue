@@ -2,7 +2,7 @@
 import { asideStore } from "@/stores/aside.js";
 import { mainStore } from "@/stores/main.js";
 import { themStore } from "@/stores/theme.js";
-import menuList from "@/assets/json/menuList.json";
+import { menuTree } from "@/routers/unit/menu.js";
 import Recursion from "./components/recursion.vue";
 
 const AStore = asideStore();
@@ -30,7 +30,7 @@ const TStore = themStore();
                 :default-active="MStore.activeTabName"
                 :collapse="AStore.menuCollapsed"
             >
-                <Recursion :children="menuList.data" />
+                <Recursion :children="menuTree" />
             </el-menu>
         </el-main>
         <el-footer style="border-top: 1px solid var(--el-menu-border-color); padding: 0">

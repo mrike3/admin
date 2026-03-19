@@ -3,7 +3,7 @@ import { mainStore } from "@/stores/main.js";
 import { asideStore } from "@/stores/aside.js";
 import { headerStore } from "@/stores/header.js";
 import { useRouter } from "vue-router";
-import menuList from "@/assets/json/menuList.json";
+import { menuTree } from "@/routers/unit/menu.js";
 import MoreBtn from "./components/MoreBtn/index.vue";
 import Sortable from "sortablejs";
 import { onMounted } from "vue";
@@ -55,7 +55,7 @@ let currentUrl = window.location.pathname;
 if (currentUrl.indexOf("/home") !== -1) {
     router.push("/home");
 } else {
-    getTab(menuList.data);
+    getTab(menuTree);
 }
 
 function getTab(menuArray) {

@@ -1,6 +1,6 @@
 <script setup>
 import Recursion from "./components/recursion.vue";
-import menuList from "@/assets/json/menuList.json";
+import { menuTree } from "@/routers/unit/menu.js";
 
 import { asideStore } from "@/stores/aside.js";
 import { mainStore } from "@/stores/main.js";
@@ -26,7 +26,7 @@ const TStore = themStore();
                 :default-active="MStore.activeTabName"
                 :collapse="AStore.menuCollapsed"
             >
-                <Recursion :children="menuList.data[AStore.menuParentIndex].children" />
+                <Recursion :children="menuTree[AStore.menuParentIndex]?.children || []" />
             </el-menu>
         </el-main>
         <el-footer>

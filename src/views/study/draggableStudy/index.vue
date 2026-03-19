@@ -3,7 +3,7 @@ import { ref } from "vue";
 import { VueDraggable } from "vue-draggable-plus";
 
 defineOptions({
-    name: "draggableStudy",
+    name: "study-draggableStudy",
 });
 
 const list = ref([

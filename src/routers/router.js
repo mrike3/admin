@@ -1,36 +1,19 @@
 import { createRouter, createWebHistory } from "vue-router";
 import admin from "@/layouts/index.vue";
 import NotFound from "@/components/NotFound.vue";
-import BlankPage from "@/views/BlankPage.vue";
+import BlankPage from "@/components/BlankPage.vue";
 
 import Nprogress from "nprogress";
 
-import menuList from "@/assets/json/menuList.json";
-
-const modules = import.meta.glob("@/views/**/*.vue");
+import { routes as childRoutes } from "./unit/pages.js";
 
 const menuRoutes = [
     {
         path: "blankpage",
         component: BlankPage,
     },
+    ...childRoutes,
 ];
-
-createMenuRoutes(menuList.data);
-
-function createMenuRoutes(menuArray) {
-    menuArray.forEach((item) => {
-        if (item.children !== undefined) {
-            createMenuRoutes(item.children);
-        } else {
-            const route = {
-                path: item.path,
-                component: modules["/src/views" + item.component + ".vue"],
-            };
-            menuRoutes.push(route);
-        }
-    });
-}
 
 const routes = [
     {

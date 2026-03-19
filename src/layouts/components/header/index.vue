@@ -3,7 +3,7 @@ import rightTool from "./components/righttool/index.vue";
 import leftTool from "./components/lefttool/index.vue";
 import tabs from "../Tabs/index.vue";
 import Recursion from "../aside/components/recursion.vue";
-import menuList from "@/assets/json/menuList.json";
+import { menuTree } from "@/routers/unit/menu.js";
 
 import { useRouter } from "vue-router";
 
@@ -68,7 +68,7 @@ defineProps({
                         :default-active="MStore.activeTabName"
                         style="border: none; width: 100%"
                     >
-                        <Recursion :children="menuList.data" />
+                        <Recursion :children="menuTree" />
                     </el-menu>
                     <div v-if="isMx" class="header-pMenu-container">
                         <div
@@ -76,7 +76,7 @@ defineProps({
                             v-bind:class="
                                 AStore.menuParentIndex == index ? 'header-pMenu-active' : ''
                             "
-                            v-for="(item, index) in menuList.data"
+                            v-for="(item, index) in menuTree"
                             :key="index"
                             @click="AStore.toggleAside(index)"
                         >

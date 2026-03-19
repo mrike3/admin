@@ -3,7 +3,7 @@ import { ref, onMounted } from "vue";
 import Sortable from "sortablejs";
 
 defineOptions({
-    name: "tabsDrag",
+    name: "study-tabsDrag",
 });
 
 const tabs = ref([

@@ -2,7 +2,7 @@
 import { asideStore } from "@/stores/aside.js";
 import { mainStore } from "@/stores/main.js";
 import { themStore } from "@/stores/theme.js";
-import menuList from "@/assets/json/menuList.json";
+import { menuTree } from "@/routers/unit/menu.js";
 import Recursion from "./components/recursion.vue";
 
 const AStore = asideStore();
@@ -19,7 +19,7 @@ const TStore = themStore();
             <div
                 class="menu-item"
                 v-bind:class="AStore.menuParentIndex === index ? 'menu-item-active' : ''"
-                v-for="(item, index) in menuList.data"
+                v-for="(item, index) in menuTree"
                 :key="index"
                 @click="AStore.toggleAside(index)"
             >
@@ -53,7 +53,7 @@ const TStore = themStore();
                         :default-active="MStore.activeTabName"
                         :collapse="AStore.menuCollapsed"
                     >
-                        <Recursion :children="menuList.data[AStore.menuParentIndex].children" />
+                        <Recursion :children="menuTree[AStore.menuParentIndex].children" />
                     </el-menu>
                 </el-main>
                 <el-footer style="padding: 0">

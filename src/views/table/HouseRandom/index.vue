@@ -7,7 +7,7 @@ import FileSaver from "file-saver";
 
 // 为keep-alive缓存添加组件名称
 defineOptions({
-    name: "HouseRandom",
+    name: "table-HouseRandom",
 });
 
 const SearchWindow = ref(true); // 搜索弹窗

@@ -1,6 +1,6 @@
 <script setup>
 import rightTool from "./components/righttool/index.vue";
-import menuList from "@/assets/json/menuList.json";
+import { menuTree } from "@/routers/unit/menu.js";
 
 import { useRouter } from "vue-router";
 
@@ -52,7 +52,7 @@ function flushRouter() {
                             v-bind:class="
                                 AStore.menuParentIndex == index ? 'header-pMenu-active' : ''
                             "
-                            v-for="(item, index) in menuList.data"
+                            v-for="(item, index) in menuTree"
                             :key="index"
                             @click="AStore.toggleAside(index)"
                         >

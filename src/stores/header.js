@@ -1,7 +1,7 @@
 import { defineStore } from "pinia";
 import i18n from "@/locales/language.js";
 
-import menuList from "@/assets/json/menuList.json";
+import { menuTree } from "@/routers/unit/menu.js";
 
 const searchData = [];
 function getSearchList(menuData) {
@@ -13,7 +13,7 @@ function getSearchList(menuData) {
         }
     });
 }
-getSearchList(menuList.data);
+getSearchList(menuTree);
 
 if (sessionStorage.getItem("isDark") == "true") {
     document.documentElement.classList.toggle("dark");
