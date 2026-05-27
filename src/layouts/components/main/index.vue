@@ -10,13 +10,13 @@ const TStore = themStore();
 <!--        name: '缓存组件名称'-->
 <!--      })-->
 <template>
-    <transition :name="TStore.openAnimate ? TStore.animateType : ''">
-        <router-view v-slot="{ Component }">
+    <router-view v-slot="{ Component, route }">
+        <transition :name="TStore.openAnimate ? TStore.animateType : ''">
             <keep-alive :include="MStore.KeepAliveNames">
                 <component :is="Component" />
             </keep-alive>
-        </router-view>
-    </transition>
+        </transition>
+    </router-view>
 </template>
 
 <style lang="scss" scoped>
