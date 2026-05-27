@@ -14,7 +14,7 @@ function refresh() {
             (item) => item !== currentPageKeepName,
         );
     }
-    router.replace({ path: "/blankpage" });
+    router.replace({ path: "/redirect" + MStore.activeTabName });
 }
 //关闭当前标签
 function closeCurrent() {

@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import admin from "@/layouts/index.vue";
 import NotFound from "@/components/NotFound.vue";
-import BlankPage from "@/components/BlankPage.vue";
+import Redirect from "@/components/Redirect.vue";
 
 import Nprogress from "nprogress";
 
@@ -9,8 +9,8 @@ import { routes as childRoutes } from "./unit/pages.js";
 
 const menuRoutes = [
     {
-        path: "blankpage",
-        component: BlankPage,
+        path: "/redirect/:path(.*)",
+        component: Redirect,
     },
     ...childRoutes,
 ];
