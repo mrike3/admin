@@ -19,6 +19,7 @@ const routes = [
     {
         path: "/",
         component: admin,
+        redirect: "/home",
         children: menuRoutes,
     },
     {
