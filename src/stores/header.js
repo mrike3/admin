@@ -60,46 +60,12 @@ export const headerStore = defineStore("headerStore", {
             i18n.global.locale = sessionStorage.getItem("language");
         },
         //切换主题
-        toggleTheme(e) {
+        toggleTheme() {
             this.isDark = !this.isDark;
             sessionStorage.setItem("isDark", this.isDark ? "true" : "");
 
-            let userAgent = navigator.userAgent || navigator.vendor || window.opera;
-            // 常见的手机浏览器标识
-            let mobile = /mobile|tablet|ip(ad|hone|od)|android/i;
-            // 检测是否为手机或平板设备
-            if (mobile.test(userAgent)) {
-                document.documentElement.classList.toggle("dark");
-            } else {
-                const transition = document.startViewTransition(() => {
-                    document.documentElement.classList.toggle("dark");
-                });
-                transition.ready.then(() => {
-                    // 从点击的位置开始
-                    const x = e.clientX;
-                    const y = e.clientY;
-
-                    // 计算圆半径
-                    const tragetRadius = Math.hypot(
-                        Math.max(x, window.innerWidth - x),
-                        Math.max(y, window.innerWidth - y),
-                    );
-
-                    document.documentElement.animate(
-                        {
-                            clipPath: [
-                                `circle(0 at ${x}px ${y}px)`, //从哪里开始
-                                `circle( ${tragetRadius}px at ${x}px ${y}px)`, //到哪里结束
-                            ],
-                        },
-                        {
-                            duration: 800,
-                            easing: "ease-in-out",
-                            pseudoElement: "::view-transition-new(root)",
-                        },
-                    );
-                });
-            }
+            if (!document.startViewTransition) this.switchTheme();
+            document.startViewTransition(this.switchTheme);
         },
         changeTheme(isDark) {
             this.isDark = isDark;
@@ -109,6 +75,9 @@ export const headerStore = defineStore("headerStore", {
             } else {
                 document.documentElement.classList.remove("dark");
             }
+        },
+        switchTheme() {
+            document.documentElement.classList.toggle("dark");
         },
     },
 });
